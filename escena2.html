@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <a-scene>
+        <a-assets>
+            <img src="./texturas/f15.jpeg" id="sky">
+            <img src="./texturas/f12.jpeg" id="meteor">
+            <a-asset-item id="metor" src="modelo.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-sky src="#sky"></a-sky>
+
+        <a-entity geometry="primitive: sphere;" radius="2" position="0 0 -5" material="shader:flat; src:#meteor" animation="property: rotation; dur:3000; to: 0 360 0; easing: linear; loop: true">
+        </a-entity>
+
+        <a-entity gltf-model="#metor"></a-entity>
+
+        <a-sound src="./texturas/SONIDO DE LA TIERRA DESDE EL ESPACIO.mp3" autoplay="true" loop="true"></a-sound>
+    </a-scene>
+
+</body>
+</html>
